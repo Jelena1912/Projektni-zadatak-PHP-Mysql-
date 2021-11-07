@@ -1,7 +1,7 @@
 
 <?php
 #Datebase connection
-include("dbconn.php")
+include("dbconn.php");
 print '
 <!DOCTYPE html>
 <html>
