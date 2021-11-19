@@ -2,7 +2,7 @@
 	print'
 		<h1>Kontakt</h1>
 		<div id="contact">
-			<iframe src="https://www.google.ru/maps/place/He%C4%87imovi%C4%87eva+ul.,+10110,+Zagreb/@45.7912043,15.9384265,17z/data=!4m5!3m4!1s0x4765d6bcad6548df:0xd0b14719fb3a7410!8m2!3d45.7910884!4d15.9396281" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<div class="mapouter"><div class="gmap_canvas"><iframe width="900" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=He%C4%8Dimovi%C4%8Deva%20ulica%2010,%20Zagreb&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-org.net">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:900px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:900px;}</style></div></div>
 			<form action="http://work2.eburza.hr/pwa/responzive-page/send-contact.php" id="contact_form" name="contact_form" method="POST">
 				<label for="fname">Ime</label>
 				<input type="text" id="fname" name="firstname" placeholder="Tvoje ime.." required>
