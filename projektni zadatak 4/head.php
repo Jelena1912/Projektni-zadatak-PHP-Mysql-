@@ -2,7 +2,6 @@
 print'
 <html>
 	<head>
-		
 		<!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- End CSS -->

@@ -21,7 +21,7 @@
 	
 	# Classes & Functions
     include_once("funkcije.php");
-	
+
 print '
 <!DOCTYPE html>
 	<header>
@@ -35,7 +35,7 @@ print '
 			print $_SESSION['message'];
 			unset($_SESSION['message']);
 		}
-	
+
 	# Homepage
 	if (!isset($_GET['menu']) || $_GET['menu'] == 1) { include("home.php"); }
 	
@@ -56,9 +56,12 @@ print '
 	
 	# Signin
 	else if ($_GET['menu'] == 7) { include("signin.php"); }
-	
+
 	# Admin webpage
 	else if ($_GET['menu'] == 8) { include("admin.php"); }
 
+    else if ($_GET['menu'] == 9) { include("signout.php"); }
+
+    else if ($_GET['menu'] == 9) { include("editor.php"); }
      include 'footer.php';
 ?>

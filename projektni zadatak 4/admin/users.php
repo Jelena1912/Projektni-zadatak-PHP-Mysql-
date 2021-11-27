@@ -40,10 +40,10 @@
         $result = @mysqli_query($conn, $query);
         $row = @mysqli_fetch_array($result);
         print '
-        <h2>User profile</h2>
-        <p><b>First name:</b> ' . $row['firstname'] . '</p>
-        <p><b>Last name:</b> ' . $row['lastname'] . '</p>
-        <p><b>Username:</b> ' . $row['username'] . '</p>';
+        <h2>Korisnički profil</h2>
+        <p><b>Ime:</b> ' . $row['firstname'] . '</p>
+        <p><b>Prezime:</b> ' . $row['lastname'] . '</p>
+        <p><b>Korisničko ime:</b> ' . $row['username'] . '</p>';
         $_query  = "SELECT * FROM countries";
         $_query .= " WHERE country_code='" . $row['country'] . "'";
         $_result = @mysqli_query($conn, $_query);
@@ -93,9 +93,9 @@
                 print '
                 </select>
                 
-                <label for="archive">Arhiva:</label><br />
-                <input type="radio" name="archive" value="Y"'; if($row['archive'] == 'Y') { echo ' checked="checked"'; $checked_archive = true; } echo ' /> YES &nbsp;&nbsp;
-                <input type="radio" name="archive" value="N"'; if($checked_archive == false) { echo ' checked="checked"'; } echo ' /> NO
+                <label for="archive">Spol:</label><br />
+                <input type="radio" name="gender" value="muško"'; if($row['archive'] == 'muško') { echo ' checked="checked"'; $checked_archive = true; } echo ' /> YES &nbsp;&nbsp;
+                <input type="radio" name="gender" value="žensko"'; if($checked_archive == false) { echo ' checked="checked"'; } echo ' /> NO
                 
                 <hr>
                 
@@ -125,46 +125,37 @@
                     </tr>
                 </thead>
                 <tbody>';
-                $query  = "SELECT * FROM users";
-                $result = @mysqli_query($conn, $query);
-                while($row = @mysqli_fetch_array($result)) {
-                    print '
-                    <tr>
-                        <td><a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;id=' .$row['id']. '"><img src="img/user.png" alt="user"></a></td>
-                        <td>';
-                            if ($_SESSION['user']['role'] == 1 || $_SESSION['user']['role'] == 2) {
-                                print '<a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;edit=' .$row['id']. '"><img src="img/edit.png" alt="uredi"></a></td>';
-                            }
-                        print '
-                        <td>';
-                            if ($_SESSION['user']['role'] == 1 || $_SESSION['user']['role'] == 2) {
-                                print '<a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;delete=' .$row['id']. '"><img src="img/delete.png" alt="obriši"></a>';
-                            }
-                        print ' 
-                        </td>
-                        <td><strong>' . $row['firstname'] . '</strong></td>
-                        <td><strong>' . $row['lastname'] . '</strong></td>
-                        <td>' . $row['email'] . '</td>
-                        <td>';
-                            $_query  = "SELECT * FROM countries";
-                            $_query .= " WHERE country_code='" . $row['country'] . "'";
-                            $_result = @mysqli_query($conn, $_query);
-                            $_row = @mysqli_fetch_array($_result, MYSQLI_ASSOC);
-                            print $_row['country_name'] . '
-                        </td>
-                        <td>';
-                            if ($row['archive'] == 'Y') { print '<img src="img/inactive.png" alt="" title="" />'; }
-                            else if ($row['archive'] == 'N') { print '<img src="img/active.png" alt="" title="" />'; }
-                        print '
-                        </td>
-                    </tr>';
-                }
+        $query  = "SELECT * FROM users";
+        $result = @mysqli_query($conn, $query);
+        while($row = @mysqli_fetch_array($result)) {
             print '
-                </tbody>
-            </table>
-        </div>';
+					<tr>
+						<td><a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;id=' .$row['id']. '"><img src="img/user.png" alt="user"></a></td>
+						<td><a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;edit=' .$row['id']. '"><img src="img/edit.png" alt="uredi"></a></td>
+						<td><a href="index.php?menu='.$menu.'&amp;action='.$action.'&amp;delete=' .$row['id']. '"><img src="img/delete.png" alt="obriši"></a></td>
+						<td><strong>' . $row['firstname'] . '</strong></td>
+						<td><strong>' . $row['lastname'] . '</strong></td>
+						<td>' . $row['email'] . '</td>
+						<td>';
+            $_query  = "SELECT * FROM countries";
+            $_query .= " WHERE country_code='" . $row['country'] . "'";
+            $_result = @mysqli_query($conn, $_query);
+            $_row = @mysqli_fetch_array($_result, MYSQLI_ASSOC);
+            print $_row['country_name'] . '
+						</td>
+						<td>';
+            if ($row['gender'] == 'muško') { print '<img src="img/inactive.png" alt="" title="" />'; }
+            else if ($row['gender'] == 'žensko') { print '<img src="img/active.png" alt="" title="" />'; }
+            print '
+						</td>
+					</tr>';
+        }
+        print '
+				</tbody>
+			</table>
+		</div>';
     }
-    
-    # Close MySQL connection
-    @mysqli_close($conn);
+
+# Close MySQL connection
+@mysqli_close($conn);
 ?>

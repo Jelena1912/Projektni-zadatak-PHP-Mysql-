@@ -1,20 +1,22 @@
 <?php
-
 	if ($_SESSION['user']['valid'] == 'true') {
 		if (!isset($action)) { $action = 1; }
 		print '
+
 <link rel="stylesheet" href="style.css">
 		<h1>Administracija</h1>
 		<div id="admin">
 			<ul>
 				<li><a href="index.php?menu=8&amp;action=1">Korisnici</a></li>
 				<li><a href="index.php?menu=8&amp;action=2">Vijesti</a></li>
+				<li><a href="index.php?menu=8&amp;action=3">Odjava</a></li>
 			</ul>';
-			# Admin Users
+
 			if ($action == 1) { include("admin/users.php"); }
-			
-			# Admin News
+
 			else if ($action == 2) { include("admin/news.php"); }
+
+            else if ($action == 3) { include("admin/singout.php"); }
 		print '
 		</div>';
 	}

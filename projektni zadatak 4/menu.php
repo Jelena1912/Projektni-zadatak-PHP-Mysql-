@@ -1,4 +1,5 @@
-<?php 
+<?php
+include ('dbconn.php');
 	print '
 	<ul>
 		<li><a href="index.php?menu=1">Naslovnica</a></li>
@@ -11,11 +12,16 @@
 			<li><a href="index.php?menu=6">Registracija</a></li>
 			<li><a href="index.php?menu=7">Prijava</a></li>';
 		}
-		else if ($_SESSION['users']['valid'] == 'true') {
+		else if ($_SESSION['users']='true' && $_SESSION['valid'] == 1) {
 			print '
 			<li><a href="index.php?menu=8">Admin</a></li>
-			<li><a href="signout.php">Odjava</a></li>';
+			<li><a href="index.php?menu=9">Odjava</a></li>';
 		}
+        else if ($_SESSION['users']='true' && $_SESSION['valid'] == 2) {
+            print '
+			<li><a href="index.php?menu=10">Editor</a></li>
+			<li><a href="index.php?menu=9">Odjava</a></li>';
+        }
 		print '
 	</ul>';
 ?>
