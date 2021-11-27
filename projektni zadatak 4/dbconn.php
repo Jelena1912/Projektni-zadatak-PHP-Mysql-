@@ -1,16 +1,15 @@
 <?php
-	# Stop Hacking attempt
-	if(!defined('__APP__')) {
-		die("Hacking attempt");
-	}
-	
-	# Connect to MySQL database
 
-	$conn = mysqli_connect('localhost','root','','webprog');
-    if($conn){
+# Stop Hacking attempt
+if (!defined('__APP__')) {
+    die("Hacking attempt");
+}
 
-    }else{
-        die('Greška povezivanja s MySQL serverom.');
-    }
+# Connect to MySQL database
+
+$conn = mysqli_connect("localhost", "root", "", "webprog");
+if (!$conn) {
+    die("Greška povezivanja s MySQL serverom." . mysqli_connect_error());
+}
 
 ?>

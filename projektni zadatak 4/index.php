@@ -37,28 +37,28 @@ print '
 		}
 	
 	# Homepage
-	if (!isset($menu) || $menu == 1) { include("home.php"); }
+	if (!isset($_GET['menu']) || $_GET['menu'] == 1) { include("home.php"); }
 	
 	# News
-	else if ($menu == 2) { include("vijesti.php"); }
+	else if ($_GET['menu'] == 2)  { include("vijesti.php"); }
 	
 	# Contact
-	else if ($menu == 3) { include("kontakt.php"); }
+	else if ($_GET['menu'] == 3) { include("kontakt.php"); }
 	
 	# About us
-	else if ($menu == 4) { include("oNama.php"); }
+	else if ($_GET['menu'] == 4) { include("oNama.php"); }
 
 	# About us
-	else if ($menu == 5) { include("galerija.php"); }
+	else if ($_GET['menu'] == 5) { include("galerija.php"); }
 
 	# Register
-	else if ($menu == 6) { include("registracija.php"); }
+	else if ($_GET['menu'] == 6) { include("registracija.php"); }
 	
 	# Signin
-	else if ($menu == 7) { include("signin.php"); }
+	else if ($_GET['menu'] == 7) { include("signin.php"); }
 	
 	# Admin webpage
-	else if ($menu == 8) { include("admin.php"); }
+	else if ($_GET['menu'] == 8) { include("admin.php"); }
 
      include 'footer.php';
 ?>

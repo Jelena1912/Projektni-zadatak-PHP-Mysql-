@@ -3,6 +3,7 @@
 <?php
 include 'head.php';
 	?>
+
 			<title>Kontakt</title>
 </html>
 <body>
@@ -19,9 +20,9 @@ include 'head.php';
 		</nav>
 	</header>
 	<main>
-		<h1>Contact Form</h1>
+		<h1>Kontakt forma</h1>
 		<div id="contact">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.7890741539636!2d15.966758816056517!3d45.795453279106205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68b5d094979%3A0xda8bfa8459b67560!2sUl.+Vrbik+VIII%2C+10000%2C+Zagreb!5e0!3m2!1shr!2shr!4v1509296660756" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="900" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=He%C4%8Dimovi%C4%8Deva%20ulica%2010,%20Zagreb&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-org.net">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:900px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:900px;}</style></div></div>
 			<?php
 				print '<p style="text-align:center; padding: 10px; background-color: #d7d6d6;border-radius: 5px;">We recieved your question. We will answer within 24 hours.</p>';
 				$EmailHeaders  = "MIME-Version: 1.0\r\n";
@@ -29,7 +30,7 @@ include 'head.php';
 				$EmailHeaders .= "From: <jberkovic@tvz.hr>\r\n";
 				$EmailHeaders .= "Reply-To:<jberkovic93@gmail.com>\r\n";
 				$EmailHeaders .= "X-Mailer: PHP/".phpversion();
-				$EmailSubject = 'Example page - Contact Form';
+				$EmailSubject = 'Kontakt';
 				$EmailBody  = '
 				<html>
 				<head>

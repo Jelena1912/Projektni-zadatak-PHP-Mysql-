@@ -1,14 +1,14 @@
 <?php
-include 'dbconn.php';
+include ("dbconn.php");
 	print '
     <center>
 	<h1>Registracija</h1>
-	<div id="registracija">
-	<p>Ispuni navedena polja!</p>';
+	<div id="register">';
 	
 	if ($_POST['_action_'] == FALSE) {
 		print '
-		 <form action="registracija.php" id="registration_form" name="registration" method="POST" >
+        <p>Ispuni navedena polja!</p>
+		 <form action="registracija.php" id="registration_form" name="registration_form" method="POST" >
 			<input type="hidden" id="_action_" name="_action_" value="TRUE">
 			
 			<label for="firstname">Ime *</label>
@@ -25,9 +25,9 @@ include 'dbconn.php';
 			
 			<label for="gender">Spol</label><br>
 			        <label for="male">muško</label>
-					<input type="radio" id="male" name="gender" value="Male">
+					<input type="radio" id="muško" name="gender" value="muško">
 					<label for="female">žensko</label>
-					<input type="radio" id="female" name="gender" value="Male">
+					<input type="radio" id="žensko" name="gender" value="žensko">
 							
 			<br><label for="password">Lozinka:* <small>(Lozinka mora imati barem 4 elementa)</small></label>
 			<input type="password" id="password" name="password" placeholder="Lozinka.." pattern=".{4,}" required>
@@ -50,22 +50,19 @@ include 'dbconn.php';
 		
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE email='" .  $_POST['email'] . "'";
-		$query .= " OR username='" .  $_POST['username'] . "'";
         $result = @mysqli_query($conn, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
-		
-		if ($row['email'] == '' || $row['username'] == '') {
-			# password_hash https://secure.php.net/manual/en/function.password-hash.php
-			# password_hash() creates a new password hash using a strong one-way hashing algorithm
-			$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
-			
-			$query  = "INSERT INTO users (firstname, lastname, email, username, password, country, gender, about)";
-			$query .= " VALUES ('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['username'] . "', '" . $pass_hash . "', '" . $_POST['country'] . "', '" . $_POST['gender'] . "', '" . $_POST['about'] . "')";
+
+        if ($row['email'] == '' ) {
+
+            $pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
+
+            $query  = "INSERT INTO users (firstname, lastname, email, username, password, country, gender)";
+			$query .= "VALUES ('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['username'] . "', '" . $pass_hash . "', '" . $_POST['country'] . "', '" . $_POST['gender'] . "')";
 			$result = @mysqli_query($conn, $query);
 			
-			# ucfirst() — Make a string's first character uppercase
-			# strtolower() - Make a string lowercase
-			echo '<p>' . ucfirst(strtolower($_POST['firstname'])) . ' ' .  ucfirst(strtolower($_POST['lastname'])) . ', hvala na registraciji </p>
+
+			echo '<p>' . ucfirst(strtolower($_POST['firstname'])) . ' ' .  ucfirst(strtolower($_POST['lastname'])) . ', hvala na registraciji! </p>
 			<hr>';
 		}
 		else {

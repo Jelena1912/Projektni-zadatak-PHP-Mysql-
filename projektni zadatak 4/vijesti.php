@@ -27,7 +27,7 @@ else {
 				<img src="vijesti/' . $row['picture'] . '" alt="' . $row['title'] . '" title="' . $row['title'] . '">
 				<h2>' . $row['title'] . '</h2>';
         if(strlen($row['description']) > 300) {
-            echo substr(strip_tags($row['description']), 0, 300).'... <a href="index.php?menu=' . $menu . '&amp;action=' . $row['id'] . '">More</a>';
+            echo substr(strip_tags($row['description']), 0, 300).'... <a href="index.php?menu=' . $menu . '&amp;action=' . $row['id'] . '">Više</a>';
         } else {
             echo strip_tags($row['description']);
         }

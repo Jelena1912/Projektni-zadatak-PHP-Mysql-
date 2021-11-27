@@ -2,7 +2,7 @@
 	print'
 		<h1>O nama</h1>
 		<h2>Geodezija u Hrvatskoj</h2>
-		<video width="50%" controls poster="img/video-cover-sir-tim-berners-lee.jpg" >
+		<video width="50%" controls poster="satelitska.jpg" >
 		  <source src="video/videoplayback.mp4" type="video/mp4">
 		  Your browser does not support HTML5 video.
 		</video>

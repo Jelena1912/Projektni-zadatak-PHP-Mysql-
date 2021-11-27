@@ -1,8 +1,10 @@
-<?php 
+<?php
+
 	if ($_SESSION['user']['valid'] == 'true') {
 		if (!isset($action)) { $action = 1; }
 		print '
-		<h1>Administration</h1>
+<link rel="stylesheet" href="style.css">
+		<h1>Administracija</h1>
 		<div id="admin">
 			<ul>
 				<li><a href="index.php?menu=8&amp;action=1">Korisnici</a></li>
@@ -12,12 +14,12 @@
 			if ($action == 1) { include("admin/users.php"); }
 			
 			# Admin News
-			else if ($action == 2) { include("admin/vijesti.php"); }
+			else if ($action == 2) { include("admin/news.php"); }
 		print '
 		</div>';
 	}
 	else {
 		$_SESSION['message'] = '<p>Molimo registrirajte se!</p>';
-		header("Location: index.php?menu=7");
+		header("Location: index.php?menu=6");
 	}
 ?>
