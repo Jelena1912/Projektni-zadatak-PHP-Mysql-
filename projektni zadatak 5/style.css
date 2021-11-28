@@ -7,6 +7,7 @@ body, html {
 body{
 	background-color: LightYellow ;
 }
+
 header {
 	display: block;
 	width: 100%;
@@ -64,15 +65,7 @@ h2 {
 	height: 500px;
 	width: 400px;
 }
-.film{
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-.danas-govorimo-o, .sutra-govorimo-o{
-	 text-align: center;
- }
 
-}
 main a {
 	color: #27318b;
 	text-decoration: none;
@@ -162,7 +155,13 @@ figure {
 	border-radius: 5%;
 	box-shadow: 0 4px 16px 0 rgb(30, 60, 80, 0.5);
 }
+.film{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 
+}
 
 legend {
 	font-size: 80%;

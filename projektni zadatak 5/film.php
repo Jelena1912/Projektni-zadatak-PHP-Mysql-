@@ -50,7 +50,9 @@ if ($_POST['action'] == FALSE) {
 else if ($_POST['action'] == TRUE) {
     print '
 			<center>
-			<h1>Rezultat pretrage</h1>';
+			<h1>Rezultat pretrage</h1>
+			</center>';
+
     $key = 'be5ea402';
     if ($_POST['year'] != '') { $url = 'http://www.omdbapi.com/?apikey='.$key.'&t=' . urlencode($_POST['title']) . '&y=' . urlencode($_POST['year']); }
     else { $url = 'http://www.omdbapi.com/?apikey='.$key.'&t=' . urlencode($_POST['title']); }
@@ -60,27 +62,30 @@ else if ($_POST['action'] == TRUE) {
     if (isset($_data['Title']) && $_data['Title'] != '') {
         print '
 				
-				<div class=film style="float:left;width:20%">
-					<div class="danas-govorimo-o"><p><strong>Naslov:</strong> ' . $_data['Title'] . '</p>
+				<div  style="width:100%;display: grid; grid-template-columns: 25% 25% 25% 25%;">
+		
+					<p><strong>Naslov:</strong> ' . $_data['Title'] . '</p>
 					<p><strong>Godina:</strong> ' . $_data['Year'] . '</p>
 					<p><strong>Ocjena:</strong> ' . $_data['Rated'] . '</p>
 					<p><strong>Izdano:</strong> ' . $_data['Released'] . '</p>
 					<p><strong>Vrijeme trajanja:</strong> ' . $_data['Runtime'] . '</p>
 					<p><strong>Žanr:</strong> ' . $_data['Genre'] . '</p>
 					<p><strong>Direktor:</strong> ' . $_data['Director'] . '</p>
-					<p><strong>Pisac:</strong> ' . $_data['Writer'] . '</p>
+					<p><strong>Jezik:</strong> ' . $_data['Language'] . '</p>
 					<p><strong>Glumci:</strong> ' . $_data['Actors'] . '</p>
 					<p><strong>O filmu:</strong> ' . $_data['Plot'] . '</p>
-					<p><strong>Jezik:</strong> ' . $_data['Language'] . '</p>
-					<p><strong>Država:</strong> ' . $_data['Country'] . '</p>
-					<p><strong>Nagrade:</strong> ' . $_data['Awards'] . '</p>
+					<p><strong>Pisac:</strong> ' . $_data['Writer'] . '</p>
 					<p><strong>Ocjene:</strong> ' . $_data['Ratings'][0]['Source'] . ': ' . $_data['Ratings'][0]['Value'] . '</p>
+					<p><strong>Nagrade:</strong> ' . $_data['Awards'] . '</p>
+					<p><strong>Država:</strong> ' . $_data['Country'] . '</p>
 					<p><strong>imdb ocjena:</strong> ' . $_data['imdbRating'] . '</p>
 					<p><strong>Produkcija:</strong> ' . $_data['Production'] . '</p>
-					<p><strong>Web stranica:</strong> <a href="' . $_data['Website'] . '">' . $_data['Website'] . '</a></p></div>
-					<div class="sutra-govorimo-o"><img src="' . $_data['Poster'] . '" alt="' . $_data['Title'] . '" style="border:1px solid grey; padding: 2px; margin:0 10px 10px 0; float:left;">
+					
 				</div>
-				</div>
+				<center>
+					<img class=gauss src="' . $_data['Poster'] . '" alt="' . $_data['Title'] . '" >
+					
+				
 				</center>';
     }
     else {
