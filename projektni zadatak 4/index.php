@@ -60,8 +60,9 @@ print '
 	# Admin webpage
 	else if ($_GET['menu'] == 8) { include("admin.php"); }
 
-    else if ($_GET['menu'] == 9) { include("signout.php"); }
-
     else if ($_GET['menu'] == 9) { include("editor.php"); }
+
+    else if ($_GET['menu'] == 10) { include("user.php"); }
+
      include 'footer.php';
 ?>

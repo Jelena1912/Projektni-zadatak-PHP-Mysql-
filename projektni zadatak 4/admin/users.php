@@ -51,11 +51,11 @@
         print '
         <p><b>Country:</b> ' .$_row['country_name'] . '</p>
         <p><b>Date:</b> ' . pickerDateToMysql($row['date']) . '</p>
-        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Nazad</a></p>';
+        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
     }
     #Edit user profile
     else if (isset($_GET['edit']) && $_GET['edit'] != '') {
-        if ($_SESSION['user']['role'] == 1 || $_SESSION['user']['role'] == 2) {
+        if ($_SESSION['user']['id'] == 1 || $_SESSION['user']['id'] == 1) {
             $query  = "SELECT * FROM users";
             $query .= " WHERE id=".$_GET['edit'];
             $result = @mysqli_query($conn, $query);
@@ -81,7 +81,7 @@
                 
                 <label for="country">Država</label>
                 <select name="country" id="country">
-                    <option value="">molimo odaberite</option>';
+                    <option value="">Molim odaberite</option>';
                     #Select all countries from database webprog, table countries
                     $_query  = "SELECT * FROM countries";
                     $_result = @mysqli_query($conn, $_query);
@@ -101,7 +101,7 @@
                 
                 <input type="submit" value="Submit">
             </form>
-            <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Nazad</a></p>';
+            <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
         }
         else {
             print '<p>Zabranjeno</p>';

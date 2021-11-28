@@ -41,7 +41,13 @@ if ($_POST['_action_'] == FALSE) {
             $_SESSION['user']['lastname'] = $row['lastname'];
             $_SESSION['message'] = '<p>Dobrodošli, ' . $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'] . '</p>';
             # Redirect to admin website
-            header("Location: index.php?menu=8");
+            # Redirect to admin website
+            if ($row['id'] == 1){ header("Location: index.php?menu=8");}
+            else {header("Location: index.php?menu=1");}
+
+            # Redirect to editor website
+            if ($row['role'] == 'Editor'){ header("Location: index.php?menu=9");}
+            else {header("Location: index.php?menu=1");}
         } # Bad username or password
         else {
             unset($_SESSION['user']);
@@ -52,4 +58,5 @@ if ($_POST['_action_'] == FALSE) {
 }
 print '
 	</div>';
+include ('footer.php');
 ?>

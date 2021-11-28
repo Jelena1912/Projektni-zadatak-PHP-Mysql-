@@ -109,7 +109,7 @@
             <time datetime="' . $row['date'] . '">' . pickerDateToMysql($row['date']) . '</time>
             <hr>
         </div>
-        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Nazad</a></p>';
+        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
     }
     
     #Add news 
@@ -168,7 +168,7 @@
             
             <input type="submit" value="Pošalji">
         </form>
-        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Nazad</a></p>';
+        <p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
     }
     else {
         print '
