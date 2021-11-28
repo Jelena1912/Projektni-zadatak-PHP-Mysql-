@@ -1,7 +1,7 @@
 <?php
 
 print '
-		<h1>Galerija</h1>
+		<center><h1>Galerija</h1>
 		<div id="gallery">
 			<figure id="1">
 				<img src="galerija/slika_1.jpg" alt="Totalna stanica" title="Totalna stanica">
@@ -23,7 +23,8 @@ print '
 				<img src="galerija/slika_5.jpg" alt="Dron" title="Dron">
 				<figcaption>Dronovi se koriste za izmjere velikih površina kao što su polja, rijeke, jezera, ceste pa čak i velikih kompleksa stambenih ili industrijskih zgrada.<figcaption>
 			</figure>
-		</div>'
+		</div>
+		</center>'
 ?>
 
 

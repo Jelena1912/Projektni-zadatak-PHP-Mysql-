@@ -2,7 +2,7 @@
 
 include("dbconn.php");
 print '
-	<h1>Prijava</h1>
+	<center><h1>Prijava</h1></center>
 	<div id="signin">';
 
 if ($_POST['_action_'] == FALSE) {
@@ -58,5 +58,5 @@ if ($_POST['_action_'] == FALSE) {
 }
 print '
 	</div>';
-include ('footer.php');
+
 ?>

@@ -1,6 +1,6 @@
 <?php
 	print '
-	<h1> O geodeziji...</h1>
+	<center><h1> O geodeziji...</h1></center>
 	<figure>
 		<img class=gauss src="Gauss.jpg" alt="Gauss" title="Johann Carl Friedrich Gauß">
 		<figcaption>Johann Carl Friedrich Gauß, lat. Carolus Fridericus Gauss, (Braunschweig, 30. travnja 1777. - Göttingen , 23. veljače 1855.), njemački matematičar i astronom. (<time datetime="1955-06-08">born 8 June 1955</time>), also known as TimBL, is an English engineer and computer scientist, best known as the inventor of the World Wide Web.</figcaption>

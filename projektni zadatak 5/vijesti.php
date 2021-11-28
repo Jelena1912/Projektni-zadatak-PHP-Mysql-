@@ -16,7 +16,7 @@ if (isset($action) && $action != '') {
 			</div>';
 }
 else {
-    print '<h1>Vijesti</h1>';
+    print '<center><h1>Vijesti</h1></center>';
     $query  = 'SELECT * FROM news';
     $query .= " WHERE archive='N'";
     $query .= " ORDER BY date DESC";
