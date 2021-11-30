@@ -10,6 +10,7 @@ print'
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="description" content="some description">
     <meta name="keywords" content="keyword 1, keyword 2, keyword 3, keyword 4, ...">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">

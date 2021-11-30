@@ -14,6 +14,6 @@
 		<p>Državna geodetska uprava je državna upravna organizacija koja obavlja upravne i druge poslove koji se odnose na: geodetske i katastarske poslove, a posebice na izradu, obnovu i održavanje katastra nekretnina, informatizaciju katastra i geodetsko-prostornog sustava, topografsku izmjeru i izradu državnih karata, vođenje geodetske dokumentacije, vođenje statističkih podataka katastra nekretnina i infrastrukture, geodetsko-katastarske poslove za državnu granicu na kopnu, razvitak i primjenu tehnologije geodetske izmjere u znanosti, gospodarstvu i drugim djelatnostima u kojima se primjenjuju ili ostvaruju intervencije u prostoru. </p>
 		<p>Geodezija ima široku primjenu u mnogim područjima.</p>
 		<p>U Republici Hrvatskoj trenutno postoji 1114 ureda i tvrtki, upisanih u Hrvatsku komoru, koji obavljaju geodetske poslove. </p>
-		<p>Video courtesy of <a href="https://www.youtube.com/watch?v=-4tvCNc0mlo&t=23s" target="_blank">youtube.com</a></p>
+		<p>Video preuzet s <a href="https://www.youtube.com/watch?v=-4tvCNc0mlo&t=23s" target="_blank">youtube.com</a></p>
 		';
 	?>

@@ -15,6 +15,7 @@
 
 				<div class="spol">
 				<label for="gender">Spol</label>
+				<br>
 				<div>
 					<input type="radio" id="male" name="gender" value="Male">
 					<label for="male">muško</label>

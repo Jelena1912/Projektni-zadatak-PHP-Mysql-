@@ -29,6 +29,7 @@ header {
 	height: 400px;
 
 }
+
 ul {
 	font-family:  'Roboto Condensed', sans-serif;
 	margin: 0;
@@ -81,6 +82,7 @@ p {
 	font-style: italic;
 	color: #27318b;
 }
+
 hr {
 	border: 0;
 	height: 1px;
@@ -117,13 +119,15 @@ hr {
 	width: 30%;
 	border: 1px solid black;
 }
+
 #news_gallery figcaption {
 	font-size: 90%;
 	text-align: center;
+
 }
 #gallery figure {
-	padding: 0.5em;
-	margin: 0 1em 0.5em 1em;
+	padding: 2em;
+	margin: 1em 1em 0.5em 7em;
 	float: left;
 	width: 30%;
 	border: 1px solid black;
@@ -133,16 +137,14 @@ hr {
 	height: 50px;
 	text-align: center;
 }
-
-figure:hover >legend {
-	visibility: visible;
-}
-
 figure > legend {
 	position: center;
 	visibility: hidden;
 	z-index: 2;
 	transition: all ease-in-out .2s;
+}
+figure:hover > legend {
+	visibility: hidden;
 }
 
 figure {
@@ -208,8 +210,7 @@ footer {
 	clear: both;
 }
 .spol{
-	display: grid;
-	grid-template-columns: 50% 
+	margin: 0 0 1em 1em;
 }
 
 footer {
